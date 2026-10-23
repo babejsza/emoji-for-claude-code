@@ -1,0 +1,108 @@
+{
+  "name": "emoji-for-claude-code",
+  "displayName": "Emoji for Claude Code",
+  "description": "Slack-style :shortcode: emoji, emoticons and autocomplete in the Claude Code chat. Unofficial.",
+  "version": "1.0.0",
+  "publisher": "babejsza",
+  "author": "Marcin Babecki",
+  "license": "MIT",
+  "pricing": "Free",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babejsza/emoji-for-claude-code.git"
+  },
+  "bugs": {
+    "url": "https://github.com/babejsza/emoji-for-claude-code/issues"
+  },
+  "homepage": "https://github.com/babejsza/emoji-for-claude-code#readme",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "AI",
+    "Chat",
+    "Other"
+  ],
+  "keywords": [
+    "emoji",
+    "emojis",
+    "emoticon",
+    "emoticons",
+    "shortcode",
+    "shortcodes",
+    "emoji picker",
+    "emoji autocomplete",
+    "autocomplete",
+    "slack",
+    "slack emoji",
+    "smiley",
+    "unicode",
+    "claude",
+    "claude code",
+    "claude-code",
+    "ai",
+    "ai chat",
+    "chat"
+  ],
+  "extensionKind": [
+    "workspace"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Emoji for Claude Code",
+      "properties": {
+        "emojiForClaudeCode.enabled": {
+          "type": "boolean",
+          "default": true,
+          "scope": "application",
+          "description": "Add :shortcode: emoji and autocomplete to the Claude Code chat input. Nothing is changed in Claude Code until you have approved it once. Changes take effect after a window reload."
+        },
+        "emojiForClaudeCode.convertEmoticons": {
+          "type": "boolean",
+          "default": true,
+          "scope": "application",
+          "description": "Turn common emoticons such as :) :D :P ;) and <3 into emoji when you type a space after them. Changes take effect after a window reload."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "emojiForClaudeCode.enable",
+        "title": "Enable",
+        "category": "Emoji for Claude Code"
+      },
+      {
+        "command": "emojiForClaudeCode.disable",
+        "title": "Disable",
+        "category": "Emoji for Claude Code"
+      },
+      {
+        "command": "emojiForClaudeCode.status",
+        "title": "Show Status",
+        "category": "Emoji for Claude Code"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:uninstall": "node ./uninstall.js",
+    "test": "node --test --test-reporter=dot test/*.test.mjs",
+    "test:e2e": "node test/e2e-chrome.mjs",
+    "test:vscode": "node test/vscode/run.mjs",
+    "package": "npx --yes @vscode/vsce@3 package --no-dependencies",
+    "patch": "node bin/patch.mjs",
+    "unpatch": "node bin/patch.mjs remove",
+    "status": "node bin/patch.mjs status"
+  },
+  "devDependencies": {
+    "@vscode/test-electron": "3.1.0"
+  }
+}

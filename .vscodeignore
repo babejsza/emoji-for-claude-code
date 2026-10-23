@@ -1,0 +1,11 @@
+**
+!package.json
+!extension.js
+!uninstall.js
+!lib/patcher.js
+!src/emoji-autocomplete.js
+!src/emoji-data.json
+!images/icon.png
+!README.md
+!CHANGELOG.md
+!LICENSE
